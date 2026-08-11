@@ -1,0 +1,40 @@
+# Sample Nginx config for clinixtech.org — for a VPS/custom-server deployment
+# instead of Vercel/Netlify. Adjust root path and upstream API as needed.
+
+server {
+    listen 80;
+    server_name clinixtech.org www.clinixtech.org;
+    return 301 https://$host$request_uri; # force HTTPS
+}
+
+server {
+    listen 443 ssl http2;
+    server_name clinixtech.org www.clinixtech.org;
+
+    ssl_certificate     /etc/letsencrypt/live/clinixtech.org/fullchain.pem;
+    ssl_certificate_key /etc/letsencrypt/live/clinixtech.org/privkey.pem;
+    ssl_protocols TLSv1.2 TLSv1.3;
+    ssl_ciphers HIGH:!aNULL:!MD5;
+
+    root /var/www/clinixtech/dist;
+    index index.html;
+
+    # --- Security headers ---
+    add_header Content-Security-Policy "default-src 'self'; script-src 'self'; style-src 'self' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self' https://api.clinixtech.com; frame-ancestors 'none'; base-uri 'self'; form-action 'self'; object-src 'none'; upgrade-insecure-requests" always;
+    add_header Strict-Transport-Security "max-age=63072000; includeSubDomains; preload" always;
+    add_header X-Frame-Options "DENY" always;
+    add_header X-Content-Type-Options "nosniff" always;
+    add_header Referrer-Policy "strict-origin-when-cross-origin" always;
+    add_header Permissions-Policy "camera=(), microphone=(), geolocation=(), payment=(), usb=()" always;
+    add_header X-XSS-Protection "0" always;
+
+    location /assets/ {
+        expires 1y;
+        add_header Cache-Control "public, immutable";
+    }
+
+    # React Router: serve index.html for unknown paths
+    location / {
+        try_files $uri /index.html;
+    }
+}
