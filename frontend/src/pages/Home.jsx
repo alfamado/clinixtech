@@ -43,10 +43,11 @@ export default function Home() {
       </section>
 
       {/* Mission strip */}
-      <section className="relative overflow-hidden border-y border-brand-mist bg-brand-ink">
-        <div className="absolute inset-0 opacity-40 [background-image:radial-gradient(#14b8a6_1px,transparent_1px)] [background-size:20px_20px]" />
-        <div className="container-page py-10">
-          <p className="text-center text-base font-medium text-white/90 sm:text-lg">
+      <section className="mission-band">
+        <div className="mission-band__grid" />
+        <div className="container-page relative grid gap-6 py-12 lg:grid-cols-[.7fr_2fr] lg:items-center">
+          <p className="mission-band__label">Our mission <span>↗</span></p>
+          <p className="text-xl font-medium leading-relaxed text-white/90 sm:text-2xl">
             "To transform healthcare delivery through innovative, AI-powered digital solutions that
             improve patient care, empower healthcare professionals, and strengthen health systems
             across Africa."

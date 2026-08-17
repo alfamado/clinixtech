@@ -3,11 +3,12 @@ import { Link } from 'react-router-dom';
 export default function Footer() {
   const year = new Date().getFullYear();
   return (
-    <footer className="border-t border-brand-mist bg-brand-ink text-brand-mist">
-      <div className="container-page grid gap-10 py-14 md:grid-cols-4">
+    <footer className="site-footer text-brand-mist">
+      <div className="site-footer__glow" />
+      <div className="container-page relative grid gap-10 py-16 md:grid-cols-4">
         <div className="md:col-span-2">
           <img src="/logo-header.png" alt="ClinixTech Solutions Limited" className="h-11 w-auto rounded-md bg-white p-1" />
-          <p className="mt-4 max-w-sm text-sm text-brand-mist/80">
+          <p className="mt-5 max-w-sm text-sm leading-6 text-brand-mist/80">
             Intelligent digital solutions for healthcare delivery across Africa — built for hospitals,
             clinicians, researchers, and public health organizations.
           </p>
@@ -33,7 +34,7 @@ export default function Footer() {
         </div>
       </div>
 
-      <div className="border-t border-white/10">
+      <div className="relative border-t border-white/10">
         <div className="container-page flex flex-col items-center justify-between gap-3 py-5 text-xs text-brand-mist/60 sm:flex-row">
           <p>&copy; {year} ClinixTech Solutions Limited. All rights reserved.</p>
           <div className="flex items-center gap-4"><Link to="/privacy" className="hover:text-white">Privacy</Link><p>Lagos, Nigeria</p></div>
