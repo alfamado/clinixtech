@@ -6,7 +6,7 @@ export default function Footer() {
     <footer className="border-t border-brand-mist bg-brand-ink text-brand-mist">
       <div className="container-page grid gap-10 py-14 md:grid-cols-4">
         <div className="md:col-span-2">
-          <img src="/logo.jpg" alt="ClinixTech Solutions Limited" className="h-9 w-auto rounded-md bg-white p-1" />
+          <img src="/logo-header.png" alt="ClinixTech Solutions Limited" className="h-11 w-auto rounded-md bg-white p-1" />
           <p className="mt-4 max-w-sm text-sm text-brand-mist/80">
             Intelligent digital solutions for healthcare delivery across Africa — built for hospitals,
             clinicians, researchers, and public health organizations.

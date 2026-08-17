@@ -3,16 +3,14 @@ import Section from '../components/Section.jsx';
 import ProductCard from '../components/ProductCard.jsx';
 import { products } from '../data/content.js';
 import { Link } from 'react-router-dom';
+import PageHero from '../components/PageHero.jsx';
 
 export default function Products() {
   return (
     <>
       <SEO title="Products" description="CliniqFlow and JandiCare — ClinixTech's flagship healthcare products." />
-      <Section
-        eyebrow="Products"
-        title="Built to solve real clinical problems"
-        description="Our flagship products, with more on the way as we validate new use cases with clinical partners."
-      >
+      <PageHero index="03" eyebrow="Products" title="Built to solve real clinical problems" description="Purpose-built products for the moments where healthcare teams need clarity, speed, and confidence." />
+      <Section eyebrow="Product suite" title="Flagship solutions in progress">
         <div className="grid gap-6 lg:grid-cols-2">
           {products.map((p) => (
             <ProductCard key={p.name} {...p} />

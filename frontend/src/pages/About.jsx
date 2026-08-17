@@ -1,27 +1,14 @@
 import SEO from '../components/SEO.jsx';
 import Section from '../components/Section.jsx';
 import { values } from '../data/content.js';
+import PageHero from '../components/PageHero.jsx';
 
 export default function About() {
   return (
     <>
       <SEO title="About Us" description="Learn about ClinixTech's mission, vision, and story." />
 
-      <section className="bg-white">
-        <div className="container-page py-20">
-          <p className="eyebrow text-center">About ClinixTech</p>
-          <h1 className="mx-auto mt-3 max-w-2xl text-center text-4xl font-bold">
-            Bridging healthcare and technology across Africa
-          </h1>
-          <p className="mx-auto mt-6 max-w-3xl text-center text-brand-ink/70">
-            ClinixTech Solutions Limited is a Nigerian health technology company that develops
-            intelligent digital solutions to improve healthcare delivery across Africa. We leverage
-            artificial intelligence, cloud technologies, data analytics, and modern software
-            engineering to build scalable products that empower healthcare professionals,
-            hospitals, researchers, and public health organizations.
-          </p>
-        </div>
-      </section>
+      <PageHero index="01" eyebrow="About ClinixTech" title="Bridging healthcare and technology across Africa" description="ClinixTech is a Nigerian health technology company building intelligent digital systems for better healthcare delivery." />
 
       <Section eyebrow="Our story" title="Why ClinixTech exists">
         <div className="mx-auto max-w-3xl space-y-5 text-brand-ink/80">

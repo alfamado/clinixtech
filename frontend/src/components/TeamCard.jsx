@@ -4,14 +4,14 @@ function initials(name) {
 
 export default function TeamCard({ name, role, bio, photo }) {
   return (
-    <div className="card text-center">
+    <div className="team-card text-center">
       {photo ? (
         <img
           src={photo}
           alt={name}
-          className="mx-auto h-20 w-20 rounded-full object-cover"
-          width="80"
-          height="80"
+          className="mx-auto h-24 w-24 rounded-2xl object-cover shadow-lg ring-4 ring-brand-blue/10"
+          width="96"
+          height="96"
           loading="lazy"
           decoding="async"
         />

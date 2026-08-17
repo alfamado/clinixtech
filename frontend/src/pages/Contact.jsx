@@ -2,12 +2,14 @@ import SEO from '../components/SEO.jsx';
 import Section from '../components/Section.jsx';
 import ContactForm from '../components/ContactForm.jsx';
 import { faqs } from '../data/content.js';
+import PageHero from '../components/PageHero.jsx';
 
 export default function Contact() {
   return (
     <>
       <SEO title="Contact" description="Book a consultation, request a demo, or partner with ClinixTech." />
-      <Section eyebrow="Contact" title="Let's talk about your healthcare workflows">
+      <PageHero index="05" eyebrow="Contact" title="Let’s talk about your healthcare workflows" description="Start with a conversation about your hospital, clinical product, research initiative, or partnership." />
+      <Section eyebrow="Start a conversation" title="Tell us what you are building">
         <div className="grid gap-10 lg:grid-cols-5">
           <div className="lg:col-span-3">
             <ContactForm />

@@ -45,12 +45,12 @@ export default function Navbar() {
         scrolled ? 'border-brand-mist bg-white/90 backdrop-blur' : 'border-transparent bg-white/60 backdrop-blur'
       }`}
     >
-      <nav className="container-page flex items-center justify-between py-3" aria-label="Primary navigation">
+      <nav className="container-page flex items-center justify-between py-2.5" aria-label="Primary navigation">
         <NavLink to="/" className="flex items-center gap-2" aria-label="ClinixTech home">
-          <img src="/logo.jpg" alt="ClinixTech Solutions Limited" className="h-12 w-auto rounded-md" />
+          <img src="/logo-header.png" alt="ClinixTech Solutions Limited" className="h-14 w-auto" />
         </NavLink>
 
-        <ul className="hidden items-center gap-8 md:flex">
+        <ul className="hidden items-center gap-8 lg:flex">
           {links.map((l) => (
             <li key={l.to}>
               <NavLink to={l.to} className={linkClass} end={l.to === '/'}>
@@ -60,14 +60,14 @@ export default function Navbar() {
           ))}
         </ul>
 
-        <div className="hidden md:block">
+        <div className="hidden lg:block">
           <NavLink to="/contact" className="btn-primary">
             Book a consultation
           </NavLink>
         </div>
 
         <button
-          className="inline-flex items-center justify-center rounded-lg border border-brand-mist p-2 md:hidden"
+          className="inline-flex items-center justify-center rounded-lg border border-brand-mist p-2 lg:hidden"
           type="button"
           aria-label={open ? 'Close menu' : 'Open menu'}
           aria-expanded={open}
@@ -83,7 +83,7 @@ export default function Navbar() {
       </nav>
 
       {open && (
-        <div className="border-t border-brand-mist bg-white md:hidden">
+        <div className="border-t border-brand-mist bg-white lg:hidden">
           <ul className="container-page flex flex-col gap-1 py-3">
             {links.map((l) => (
               <li key={l.to}>

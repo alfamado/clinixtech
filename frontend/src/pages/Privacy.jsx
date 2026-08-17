@@ -1,12 +1,14 @@
 import SEO from '../components/SEO.jsx';
 import Section from '../components/Section.jsx';
 import { resetAnalyticsConsent } from '../components/Analytics.jsx';
+import PageHero from '../components/PageHero.jsx';
 
 export default function Privacy() {
   return (
     <>
       <SEO title="Privacy Notice" description="How ClinixTech handles personal information submitted through this website." />
-      <Section eyebrow="Privacy" title="Privacy notice">
+      <PageHero index="06" eyebrow="Privacy" title="Privacy notice" description="A clear explanation of how information submitted through this website is handled." />
+      <Section eyebrow="Your information" title="Clear, limited, and purposeful processing">
         <article className="mx-auto max-w-3xl space-y-7 text-sm leading-7 text-brand-ink/80">
           <p>Last updated: August 2026</p>
           <section><h2 className="text-xl font-bold">What we collect</h2><p className="mt-2">When you contact us, we collect the information you provide: your name, email address, organization, reason for contact, and message.</p></section>
