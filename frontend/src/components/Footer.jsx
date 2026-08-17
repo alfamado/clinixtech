@@ -26,7 +26,7 @@ export default function Footer() {
         <div>
           <h3 className="text-sm font-semibold text-white">Contact</h3>
           <ul className="mt-4 space-y-2 text-sm">
-            <li><a href="mailto:clinixtech@gmail.com" className="hover:text-white">clinixtech@gmail.com</a></li>
+            <li><a href="mailto:clinixtechsolutions@gmail.com" className="hover:text-white">clinixtech@gmail.com</a></li>
             <li><a href="tel:+2348023567823" className="hover:text-white">+234 802 356 7823</a></li>
             <li><a href="tel:+2349079790073" className="hover:text-white">+234 907 979 0073</a></li>
           </ul>

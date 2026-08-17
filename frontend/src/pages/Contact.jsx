@@ -15,7 +15,7 @@ export default function Contact() {
           <div className="space-y-6 lg:col-span-2">
             <div className="card">
               <h3 className="text-sm font-semibold uppercase tracking-wide text-brand-ink/50">Email</h3>
-              <a href="mailto:clinixtech@gmail.com" className="mt-1 block text-brand-blue">clinixtech@gmail.com</a>
+              <a href="mailto:clinixtechsolutions@gmail.com" className="mt-1 block text-brand-blue">clinixtech@gmail.com</a>
             </div>
             <div className="card">
               <h3 className="text-sm font-semibold uppercase tracking-wide text-brand-ink/50">Phone</h3>
