@@ -15,25 +15,27 @@ export default function Home() {
       />
 
       {/* Hero */}
-      <section className="relative overflow-hidden bg-white">
-        <div className="container-page grid items-center gap-12 py-20 lg:grid-cols-2 lg:py-28">
+      <section className="hero-tech">
+        <div className="hero-tech__mesh" />
+        <div className="container-page relative grid items-center gap-12 py-20 lg:grid-cols-2 lg:py-28">
           <div className="animate-fade-up">
-            <p className="eyebrow">Health technology, built for Africa</p>
-            <h1 className="mt-4 text-4xl font-extrabold leading-tight sm:text-5xl">
+            <p className="hero-tech__eyebrow"><span /> Health technology, built for Africa</p>
+            <h1 className="hero-tech__title mt-5 text-4xl font-extrabold leading-[1.05] sm:text-5xl lg:text-6xl">
               Smarter healthcare starts with{' '}
-              <span className="bg-gradient-to-r from-brand-blue to-brand-teal bg-clip-text text-transparent">
+              <span className="bg-gradient-to-r from-sky-300 via-brand-blue to-brand-teal bg-clip-text text-transparent">
                 a clearer signal
               </span>
             </h1>
-            <p className="mt-5 max-w-lg text-base text-brand-ink/70">
+            <p className="mt-6 max-w-lg text-base leading-7 text-slate-300">
               ClinixTech develops intelligent digital solutions — AI, cloud, and data — that
               empower hospitals, clinicians, and researchers to catch what matters sooner and
               deliver better patient outcomes.
             </p>
-            <div className="mt-8 flex flex-wrap gap-4">
+            <div className="mt-9 flex flex-wrap gap-4">
               <Link to="/contact" className="btn-primary">Book a consultation</Link>
-              <Link to="/products" className="btn-secondary">Explore our products</Link>
+              <Link to="/products" className="hero-tech__secondary">Explore our products <span>→</span></Link>
             </div>
+            <div className="hero-tech__proof"><span>●</span> Secure-by-design digital health solutions</div>
           </div>
 
           <ClinicalSignal />
@@ -41,7 +43,8 @@ export default function Home() {
       </section>
 
       {/* Mission strip */}
-      <section className="border-y border-brand-mist bg-brand-ink">
+      <section className="relative overflow-hidden border-y border-brand-mist bg-brand-ink">
+        <div className="absolute inset-0 opacity-40 [background-image:radial-gradient(#14b8a6_1px,transparent_1px)] [background-size:20px_20px]" />
         <div className="container-page py-10">
           <p className="text-center text-base font-medium text-white/90 sm:text-lg">
             "To transform healthcare delivery through innovative, AI-powered digital solutions that

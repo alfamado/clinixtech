@@ -27,6 +27,49 @@
   background-image: linear-gradient(rgba(148, 163, 184, .08) 1px, transparent 1px), linear-gradient(90deg, rgba(148, 163, 184, .08) 1px, transparent 1px);
   background-size: 28px 28px;
 }
+.hero-tech {
+  @apply relative isolate overflow-hidden bg-slate-950;
+  background-image: radial-gradient(circle at 12% 12%, rgba(10,132,255,.22), transparent 24rem), radial-gradient(circle at 82% 84%, rgba(20,184,166,.15), transparent 24rem);
+}
+.hero-tech__mesh {
+  @apply pointer-events-none absolute inset-0 opacity-50;
+  background-image: linear-gradient(rgba(148,163,184,.07) 1px, transparent 1px), linear-gradient(90deg, rgba(148,163,184,.07) 1px, transparent 1px);
+  background-size: 44px 44px;
+  mask-image: linear-gradient(to bottom, black, transparent 84%);
+}
+.hero-tech__eyebrow { @apply inline-flex items-center gap-2 text-xs font-bold uppercase tracking-[.18em] text-teal-300; }
+.hero-tech__eyebrow span { @apply h-2 w-2 rounded-full bg-brand-teal; box-shadow: 0 0 0 5px rgba(45,212,191,.15); }
+.hero-tech__title { @apply text-white; }
+.hero-tech__secondary { @apply inline-flex items-center gap-2 rounded-xl2 border border-white/20 bg-white/5 px-5 py-3 text-sm font-semibold text-white transition hover:border-white/50 hover:bg-white/10; }
+.hero-tech__secondary span { @apply text-lg text-teal-300; }
+.hero-tech__proof { @apply mt-8 flex items-center gap-2 text-xs font-medium text-slate-400; }
+.hero-tech__proof span { @apply text-brand-teal; }
+
+.clinical-visual {
+  @apply relative isolate overflow-hidden rounded-[2rem] border border-white/15 bg-slate-950 p-5 shadow-2xl shadow-blue-950/60 sm:p-7;
+  background-image: linear-gradient(rgba(148, 163, 184, .1) 1px, transparent 1px), linear-gradient(90deg, rgba(148, 163, 184, .1) 1px, transparent 1px);
+  background-size: 26px 26px;
+}
+.clinical-visual__orb { @apply absolute rounded-full blur-3xl; }
+.clinical-visual__orb--one { @apply -left-16 top-10 h-48 w-48 bg-brand-blue/30; }
+.clinical-visual__orb--two { @apply -right-20 bottom-0 h-56 w-56 bg-brand-teal/20; }
+.clinical-visual__halo { @apply absolute left-1/2 top-1/2 h-72 w-72 -translate-x-1/2 -translate-y-1/2 rounded-full border border-sky-300/10; box-shadow: 0 0 70px rgba(10,132,255,.24), inset 0 0 70px rgba(10,132,255,.09); }
+.clinical-visual__topline { @apply relative flex items-center justify-between text-[10px] font-bold uppercase tracking-[.18em] text-slate-500; }
+.clinical-visual__live { @apply inline-flex items-center gap-2 text-teal-300; }
+.clinical-visual__live i { @apply h-2 w-2 rounded-full bg-brand-teal; box-shadow: 0 0 0 5px rgba(45,212,191,.12); }
+.clinical-visual__core { @apply relative mx-auto mt-7 h-36 w-36; }
+.clinical-visual__ring { @apply absolute inset-0 rounded-full border border-sky-300/40; }
+.clinical-visual__ring--outer { animation: spin-slow 15s linear infinite; border-style: dashed; }
+.clinical-visual__ring--inner { @apply inset-4 border-brand-teal/60; box-shadow: 0 0 25px rgba(45,212,191,.25); animation: spin-slow 10s linear infinite reverse; }
+.clinical-visual__cross { @apply absolute left-1/2 top-1/2 flex h-12 w-12 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-2xl border border-white/20 bg-sky-400/20 text-4xl font-light text-white shadow-lg backdrop-blur; }
+.clinical-visual__dot { @apply absolute h-2.5 w-2.5 rounded-full bg-brand-teal; box-shadow: 0 0 12px #2dd4bf; }
+.clinical-visual__dot--a { @apply left-1 top-1/2; }.clinical-visual__dot--b { @apply right-5 top-3; }.clinical-visual__dot--c { @apply bottom-3 right-3; }
+.clinical-visual__chart { @apply relative mt-3 h-28 w-full; }
+.clinical-visual__metrics { @apply relative mt-2 grid grid-cols-2 gap-3; }
+.clinical-visual__metrics > div { @apply flex items-center gap-3 rounded-2xl border border-white/10 bg-slate-900/70 p-3 backdrop-blur-sm; }
+.metric-icon { @apply flex h-8 w-8 items-center justify-center rounded-xl bg-brand-blue/15 text-lg text-sky-300; }
+.clinical-visual__metrics p { @apply text-[10px] font-medium uppercase tracking-wide text-slate-400; }.clinical-visual__metrics strong { @apply mt-0.5 block text-sm font-semibold normal-case tracking-normal text-white; }
+@keyframes spin-slow { to { transform: rotate(360deg); } }
 .signal-panel__glow {
   @apply absolute -right-20 -top-24 h-72 w-72 rounded-full bg-brand-blue/25 blur-3xl;
 }
