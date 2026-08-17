@@ -87,16 +87,19 @@ export const team = [
   {
     name: 'Abdulmalik Adedotun',
     role: 'CEO & Co-founder',
+    photo: '/team/abdulmalik.jpg',
     bio: "Leads ClinixTech's strategic vision, partnerships, and business development. Passionate about leveraging technology to improve healthcare accessibility and drive innovation across Africa.",
   },
   {
     name: 'Boluwatife Gbadamosi',
     role: 'CTO & Co-founder',
+    photo: '/team/boluwatife.jpg',
     bio: "Oversees the company's technology strategy, software architecture, and engineering operations. Leads the development of scalable, secure, and AI-powered healthcare platforms.",
   },
   {
     name: 'Deborah Adelegan',
     role: 'Bioinformatics Engineer & Co-founder',
+    photo: '/team/deborah.jpg',
     bio: 'AI Engineer and Bioinformatics Researcher applying artificial intelligence and computational biology to healthcare challenges. Leads AI research, machine learning development, and product innovation.',
   },
 ];
