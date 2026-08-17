@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { submitContactForm } from '../lib/api.js';
+import { Link } from 'react-router-dom';
 
 const initialState = {
   name: '',
@@ -73,7 +74,7 @@ export default function ContactForm() {
       <div className="card" role="status">
         <h3 className="text-lg font-semibold text-brand-ink">Message sent</h3>
         <p className="mt-2 text-sm text-brand-ink/70">{serverMessage}</p>
-        <button className="btn-secondary mt-4" onClick={() => setStatus('idle')}>
+        <button type="button" className="btn-secondary mt-4" onClick={() => setStatus('idle')}>
           Send another message
         </button>
       </div>
@@ -178,6 +179,10 @@ export default function ContactForm() {
         />
         {errors.message && <p id="message-error" className="mt-1 text-xs text-red-600">{errors.message}</p>}
       </div>
+
+      <p className="text-xs leading-5 text-brand-ink/60">
+        Please do not include patient records or sensitive health information. By submitting, you acknowledge our <Link to="/privacy" className="font-medium text-brand-blue underline underline-offset-2">Privacy Notice</Link>.
+      </p>
 
       {status === 'error' && serverMessage && (
         <p role="alert" className="text-sm text-red-600">{serverMessage}</p>

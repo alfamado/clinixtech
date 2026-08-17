@@ -10,6 +10,10 @@ export default function TeamCard({ name, role, bio, photo }) {
           src={photo}
           alt={name}
           className="mx-auto h-20 w-20 rounded-full object-cover"
+          width="80"
+          height="80"
+          loading="lazy"
+          decoding="async"
         />
       ) : (
         <div className="mx-auto flex h-20 w-20 items-center justify-center rounded-full bg-brand-navy text-lg font-bold text-white">

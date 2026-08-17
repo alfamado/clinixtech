@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 import SEO from '../components/SEO.jsx';
 import Section from '../components/Section.jsx';
-import PulseLine from '../components/PulseLine.jsx';
+import ClinicalSignal from '../components/ClinicalSignal.jsx';
 import ServiceCard from '../components/ServiceCard.jsx';
 import ProductCard from '../components/ProductCard.jsx';
 import { services, products } from '../data/content.js';
@@ -36,20 +36,7 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="relative rounded-xl2 border border-brand-mist bg-brand-paper p-8">
-            <p className="eyebrow">Live signal</p>
-            <PulseLine className="mt-6 h-16 w-full" />
-            <div className="mt-8 grid grid-cols-2 gap-4">
-              <div className="rounded-xl2 bg-white p-4 shadow-sm">
-                <p className="text-2xl font-bold text-brand-blue">2</p>
-                <p className="text-xs text-brand-ink/60">Flagship products in build</p>
-              </div>
-              <div className="rounded-xl2 bg-white p-4 shadow-sm">
-                <p className="text-2xl font-bold text-brand-teal">3</p>
-                <p className="text-xs text-brand-ink/60">Founders across AI &amp; engineering</p>
-              </div>
-            </div>
-          </div>
+          <ClinicalSignal />
         </div>
       </section>
 

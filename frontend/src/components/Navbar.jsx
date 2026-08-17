@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import { useLocation } from 'react-router-dom';
 import { NavLink } from 'react-router-dom';
 
 const links = [
@@ -13,11 +14,24 @@ const links = [
 export default function Navbar() {
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const { pathname } = useLocation();
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 8);
     window.addEventListener('scroll', onScroll);
     return () => window.removeEventListener('scroll', onScroll);
+  }, []);
+
+  useEffect(() => {
+    setOpen(false);
+  }, [pathname]);
+
+  useEffect(() => {
+    const onKeyDown = (event) => {
+      if (event.key === 'Escape') setOpen(false);
+    };
+    window.addEventListener('keydown', onKeyDown);
+    return () => window.removeEventListener('keydown', onKeyDown);
   }, []);
 
   const linkClass = ({ isActive }) =>
@@ -31,9 +45,9 @@ export default function Navbar() {
         scrolled ? 'border-brand-mist bg-white/90 backdrop-blur' : 'border-transparent bg-white/60 backdrop-blur'
       }`}
     >
-      <nav className="container-page flex items-center justify-between py-3">
+      <nav className="container-page flex items-center justify-between py-3" aria-label="Primary navigation">
         <NavLink to="/" className="flex items-center gap-2" aria-label="ClinixTech home">
-          <img src="/logo.jpg" alt="ClinixTech Solutions Limited" className="h-36 w-auto rounded-md" />
+          <img src="/logo.jpg" alt="ClinixTech Solutions Limited" className="h-12 w-auto rounded-md" />
         </NavLink>
 
         <ul className="hidden items-center gap-8 md:flex">
@@ -54,6 +68,7 @@ export default function Navbar() {
 
         <button
           className="inline-flex items-center justify-center rounded-lg border border-brand-mist p-2 md:hidden"
+          type="button"
           aria-label={open ? 'Close menu' : 'Open menu'}
           aria-expanded={open}
           onClick={() => setOpen((v) => !v)}

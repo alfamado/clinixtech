@@ -9,6 +9,8 @@ import Products from './pages/Products.jsx';
 import Team from './pages/Team.jsx';
 import Contact from './pages/Contact.jsx';
 import NotFound from './pages/NotFound.jsx';
+import Privacy from './pages/Privacy.jsx';
+import Analytics, { CookieConsent } from './components/Analytics.jsx';
 
 function ScrollToTop() {
   const { pathname } = useLocation();
@@ -21,9 +23,11 @@ function ScrollToTop() {
 export default function App() {
   return (
     <div className="flex min-h-screen flex-col">
+      <a href="#main-content" className="skip-link">Skip to content</a>
+      <Analytics />
       <ScrollToTop />
       <Navbar />
-      <main className="flex-1">
+      <main id="main-content" className="flex-1" tabIndex="-1">
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
@@ -31,10 +35,12 @@ export default function App() {
           <Route path="/products" element={<Products />} />
           <Route path="/team" element={<Team />} />
           <Route path="/contact" element={<Contact />} />
+          <Route path="/privacy" element={<Privacy />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </main>
       <Footer />
+      <CookieConsent />
     </div>
   );
 }

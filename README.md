@@ -28,7 +28,7 @@ npm run dev
 ```
 
 Get a free Resend API key at https://resend.com — verify your sending domain there
-(e.g. `clinixtech.com`) so `CONTACT_FROM_EMAIL` can use it. Until the domain is
+(e.g. `clinixtech.org`) so `CONTACT_FROM_EMAIL` can use it. Until the domain is
 verified, Resend's sandbox `onboarding@resend.dev` sender works for testing.
 
 ## 2. How the contact form is protected
@@ -69,7 +69,7 @@ using `deploy/nginx.conf.example` as a starting point (already includes the same
 2. Set all vars from `.env.example` in the host's dashboard.
 3. Point `ALLOWED_ORIGINS` at your live frontend domain(s).
 4. Point the frontend's `VITE_API_URL` at the backend's public URL (put it behind your own
-   subdomain, e.g. `api.clinixtech.com`, via a CNAME).
+   subdomain, e.g. `api.clinixtech.org`, via a CNAME).
 
 ## 4. Exact security headers (as requested)
 
@@ -78,7 +78,7 @@ These are already configured in `frontend/vercel.json`, `frontend/public/_header
 for reference:
 
 ```
-Content-Security-Policy: default-src 'self'; script-src 'self'; style-src 'self' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self' https://api.clinixtech.com; frame-ancestors 'none'; base-uri 'self'; form-action 'self'; object-src 'none'; upgrade-insecure-requests
+Content-Security-Policy: default-src 'self'; script-src 'self'; style-src 'self' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self' https://api.clinixtech.org; frame-ancestors 'none'; base-uri 'self'; form-action 'self'; object-src 'none'; upgrade-insecure-requests
 Strict-Transport-Security: max-age=63072000; includeSubDomains; preload
 X-Frame-Options: DENY
 X-Content-Type-Options: nosniff
@@ -92,7 +92,7 @@ Notes:
   subdomain will always serve HTTPS — preload-listed domains are extremely hard to walk back.
   It's safe to launch without submitting to the list; the header still enforces HTTPS for repeat
   visitors either way.
-- **CSP `connect-src`**: update `https://api.clinixtech.com` to match wherever you actually deploy
+- **CSP `connect-src`**: update `https://api.clinixtech.org` to match wherever you actually deploy
   the backend, in both `vercel.json`/`_headers`/`nginx.conf.example` and this README.
 - **`X-XSS-Protection: 0`**: intentionally disables the legacy browser XSS auditor, which is
   deprecated and can itself introduce bugs — CSP is the modern replacement.

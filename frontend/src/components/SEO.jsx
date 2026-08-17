@@ -12,6 +12,13 @@ export default function SEO({ title, description }) {
       }
       tag.setAttribute('content', description);
     }
+    let canonical = document.querySelector('link[rel="canonical"]');
+    if (!canonical) {
+      canonical = document.createElement('link');
+      canonical.setAttribute('rel', 'canonical');
+      document.head.appendChild(canonical);
+    }
+    canonical.setAttribute('href', `https://clinixtech.org${window.location.pathname}`);
   }, [title, description]);
 
   return null;

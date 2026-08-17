@@ -13,7 +13,59 @@
     outline: 2px solid #0A84FF;
     outline-offset: 2px;
   }
+  ::selection {
+    @apply bg-brand-blue/20 text-brand-ink;
+  }
 }
+
+.skip-link {
+  @apply fixed left-4 top-4 z-[100] -translate-y-20 rounded-lg bg-brand-ink px-4 py-2 text-sm font-semibold text-white transition-transform focus:translate-y-0;
+}
+
+.signal-panel {
+  @apply relative isolate overflow-hidden rounded-[1.75rem] border border-slate-700 bg-slate-950 p-5 shadow-2xl shadow-brand-navy/20 sm:p-7;
+  background-image: linear-gradient(rgba(148, 163, 184, .08) 1px, transparent 1px), linear-gradient(90deg, rgba(148, 163, 184, .08) 1px, transparent 1px);
+  background-size: 28px 28px;
+}
+.signal-panel__glow {
+  @apply absolute -right-20 -top-24 h-72 w-72 rounded-full bg-brand-blue/25 blur-3xl;
+}
+.signal-panel__topline {
+  @apply relative flex items-center justify-between gap-3 text-[10px] font-semibold uppercase tracking-[.16em] text-slate-400;
+}
+.signal-panel__live {
+  @apply inline-flex items-center gap-2 text-teal-300;
+}
+.signal-panel__live i {
+  @apply h-2 w-2 rounded-full bg-brand-teal;
+  box-shadow: 0 0 0 5px rgba(45, 212, 191, .12);
+}
+.signal-panel__chart {
+  @apply relative mt-7 h-40 w-full;
+}
+.signal-panel__path {
+  stroke-dasharray: 900;
+  animation: signal-draw 2.4s ease-out both;
+}
+.signal-panel__node { animation: node-pulse 2s ease-in-out infinite; }
+.signal-panel__metrics {
+  @apply relative mt-2 grid gap-2 sm:grid-cols-3;
+}
+.signal-panel__metrics > div {
+  @apply rounded-xl border border-white/10 bg-white/5 p-3 backdrop-blur-sm;
+}
+.signal-panel__metrics span {
+  @apply block text-[10px] font-medium uppercase tracking-wide text-slate-400;
+}
+.signal-panel__metrics strong {
+  @apply mt-1 block text-sm font-semibold text-white;
+}
+.cookie-consent {
+  @apply fixed inset-x-4 bottom-4 z-50 mx-auto flex max-w-xl flex-col items-start gap-3 rounded-xl2 border border-brand-mist bg-white p-4 text-sm text-brand-ink shadow-xl sm:flex-row sm:items-center;
+}
+.cookie-consent a { @apply font-medium text-brand-blue underline underline-offset-2; }
+@keyframes signal-draw { from { stroke-dashoffset: 900; } to { stroke-dashoffset: 0; } }
+@keyframes node-pulse { 50% { opacity: .65; filter: drop-shadow(0 0 9px #2dd4bf); } }
 
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after {
